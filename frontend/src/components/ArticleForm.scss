@@ -1,0 +1,60 @@
+@import "../global.scss";
+
+.article_form {
+    margin-top: 40px !important;
+    background-color: $white;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    padding-top: 50px !important;
+    padding-bottom: 50px !important;
+
+    h2 {
+        background-color: $white;
+    }
+
+    div {
+        background-color: $white;
+        display: flex;
+        justify-content: center;
+        width: 100%;
+
+        * {
+            background-color: $white;
+        }
+
+        label {
+            width: 200px;
+        }
+
+        input,
+        textarea,
+        select {
+            min-width: 300px;
+            width: 700px;
+            font-size: 16px;
+        }
+
+        textarea {
+            height: 250px;
+        }
+    }
+    .action_buttons {
+        display: flex;
+        gap: 10px;
+        button {
+            background-color: $orange;
+
+            &:hover {
+                background-color: $white;
+            }
+        }
+        .delete_button {
+            @include button;
+            align-items: center;
+            width: auto;
+        }
+    }
+}

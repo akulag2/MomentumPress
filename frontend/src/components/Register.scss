@@ -1,0 +1,38 @@
+@import "../global.scss";
+
+.register_container {
+    .register {
+        max-width: 300px;
+        margin: auto;
+
+        h2 {
+            text-align: center;
+            margin-bottom: 16px;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+
+            label {
+                font-size: 20px;
+                display: block;
+                width: 100%;
+                text-align: center;
+            }
+
+            input {
+                width: 100%;
+            }
+
+            .login_section {
+                text-align: center;
+
+                a {
+                    text-transform: lowercase;
+                }
+            }
+        }
+    }
+}

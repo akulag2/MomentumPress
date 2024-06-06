@@ -1,0 +1,185 @@
+// colors
+$white: #fcfaf2;
+$brown: #2c2725;
+$orange: #e6a348;
+$beige: #d5cdbc;
+
+// fonts
+$secondary: "Merriweather", serif;
+$primary: "Nunito", sans-serif;
+
+// font sizes
+$normal: 400;
+$bold: 700;
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    line-height: 1.8;
+    background-color: $beige;
+    color: $brown;
+    font-family: $primary;
+}
+
+ul {
+    list-style-type: none;
+}
+
+a {
+    text-decoration: none;
+    color: $brown;
+    font-family: $secondary;
+    font-weight: $bold;
+    cursor: pointer;
+    text-transform: uppercase;
+    border-bottom: 2px solid transparent;
+    padding-top: 4px;
+
+    &:hover {
+        border-bottom: 2px solid $brown;
+    }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: $secondary;
+    font-weight: $bold;
+}
+
+@mixin layout {
+    max-width: 1200px;
+    margin: auto;
+    padding: 20px;
+}
+
+.layout {
+    @include layout;
+}
+
+@mixin small {
+    @media (min-width: 576px) {
+        @content;
+    }
+}
+
+@mixin medium {
+    @media (min-width: 768px) {
+        @content;
+    }
+}
+
+@mixin large {
+    @media (min-width: 992px) {
+        @content;
+    }
+}
+
+@mixin x-large {
+    @media (min-width: 1200px) {
+        @content;
+    }
+}
+
+@mixin button {
+    height: 40px;
+    padding: 0 20px;
+    color: $brown;
+    background-color: $orange;
+    border: 2px solid $orange;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: $bold;
+    font-family: $secondary;
+    cursor: pointer;
+    text-transform: uppercase;
+
+    &:hover {
+        background-color: transparent;
+    }
+
+    &:focus-visible {
+        outline: none;
+    }
+}
+
+button {
+    @include button;
+}
+
+@mixin input {
+    border: 1px solid $brown;
+    padding: 0 20px;
+    height: 40px;
+    border-radius: 20px;
+    font-size: 20px;
+
+    &:focus-visible {
+        outline: none;
+    }
+}
+
+input {
+    @include input;
+}
+
+textarea {
+    border: 1px solid $brown;
+    padding: 0 20px;
+    border-radius: 20px;
+    font-size: 20px;
+    resize: none;
+
+    &:focus-visible {
+        outline: none;
+    }
+}
+
+select {
+    border: 1px solid $brown;
+    padding: 0 20px;
+    border-radius: 20px;
+    font-size: 20px;
+    resize: none;
+    height: 40px;
+
+    &:focus-visible {
+        outline: none;
+    }
+}
+
+.pagination {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    margin-top: 16px;
+
+    button {
+        width: 40px;
+        padding: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        &:hover {
+            svg {
+                background-color: transparent;
+            }
+        }
+        &:disabled {
+            background-color: transparent;
+            cursor: unset;
+            svg {
+                background-color: transparent;
+            }
+        }
+        svg {
+            background-color: $orange;
+        }
+    }
+}

@@ -1,0 +1,42 @@
+@import "../global.scss";
+
+.single_article {
+    .article_data {
+        background-color: $white;
+        padding: 20px;
+        border-radius: 20px;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+
+        @include large {
+            flex-direction: row;
+        }
+        & > *,
+        > * > * {
+            background-color: $white;
+        }
+
+        .data_left,
+        .data_right {
+            width: 100%;
+            @include large {
+                width: 50%;
+            }
+        }
+        .data_left {
+            img {
+                width: 100%;
+                border-radius: 20px;
+                margin-top: 20px;
+            }
+            a {
+                background-color: $white;
+                &:hover {
+                    border: none;
+                    color: $orange;
+                }
+            }
+        }
+    }
+}

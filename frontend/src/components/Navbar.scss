@@ -1,0 +1,167 @@
+@import "../global.scss";
+
+.navbar_container {
+    background-color: $brown;
+}
+.navbar {
+    background-color: $brown;
+
+    .primary,
+    .primary_menu {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: $brown;
+        .title {
+            font-family: $primary;
+            color: $orange;
+            background-color: $brown;
+            display: none;
+
+            @include small {
+                display: block;
+            }
+        }
+
+        .title_mobile {
+            display: block;
+
+            @include small {
+                display: none;
+            }
+        }
+
+        .nav_links {
+            background-color: $beige;
+            display: none;
+            align-items: center;
+            gap: 16px;
+            padding: 0 20px;
+            border-radius: 20px;
+            height: 40px;
+
+            @include large {
+                display: flex;
+            }
+        }
+
+        .calender {
+            background-color: $brown;
+            display: flex;
+            align-items: center;
+            gap: 16px;
+
+            p {
+                font-family: $secondary;
+                background-color: $brown;
+                color: $beige;
+            }
+
+            .menu_icon {
+                display: block;
+                height: 40px;
+                display: flex;
+                align-items: center;
+                cursor: pointer;
+                margin-top: -5px;
+                width: 35px;
+
+                @include large {
+                    display: none;
+                }
+
+                span {
+                    background-color: $brown;
+                    color: $beige;
+                    width: 100%;
+                    text-align: center;
+                    font-size: 34px;
+                }
+
+                .close {
+                    font-size: 30px;
+                }
+            }
+        }
+    }
+
+    .secondary,
+    .secondary_menu {
+        background-color: $brown;
+        .nav_links {
+            height: 40px;
+            display: none;
+            justify-content: space-around;
+            align-items: center;
+            padding: 0 20px;
+            background-color: $orange;
+            border-radius: 20px;
+            margin-top: 20px;
+
+            @include large {
+                display: flex;
+            }
+
+            .link {
+                background-color: $orange;
+            }
+        }
+    }
+
+    .menu {
+        @include large {
+            display: none;
+        }
+
+        &.open {
+            background-color: $brown;
+            display: flex;
+            justify-content: flex-end;
+            align-items: flex-end;
+            flex-direction: column;
+            gap: 16px;
+            padding-top: 20px;
+            position: absolute;
+            top: 70px;
+            right: 0;
+            left: 0;
+            padding: 20px;
+
+            @include small {
+                flex-direction: row;
+                align-items: flex-start;
+            }
+
+            @include large {
+                display: none;
+            }
+
+            .primary_menu {
+                position: relative;
+                justify-content: end;
+                width: 100%;
+
+                .nav_links {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 5px;
+                    height: auto;
+                    width: 100%;
+                }
+            }
+            .secondary_menu {
+                display: flex;
+                justify-content: flex-end;
+                width: 100%;
+
+                .nav_links {
+                    display: flex;
+                    flex-direction: column;
+                    height: auto;
+                    margin-top: 0;
+                    width: 100%;
+                }
+            }
+        }
+    }
+}
